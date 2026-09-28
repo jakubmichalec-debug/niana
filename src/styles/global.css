@@ -1,0 +1,161 @@
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/motion.css";
+@import "./tokens/surfaces.css";
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; }
+body {
+  background: var(--surface-page);
+  color: var(--text-primary);
+  font: var(--type-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { color: var(--text-primary); }
+img { max-width: 100%; display: block; }
+::selection { background: var(--ink); color: var(--oat); }
+
+/* New arrivals strip (Home). Two layers, two separate `transform`s:
+   .arrivals-card (the outer element) gets its scale/rotateY/z/opacity
+   coverflow pose as an inline style set from `position` state in
+   ProductLoop.jsx, transitioning on every slider move — plain React +
+   CSS, no per-frame ticker. .arrivals-card-inner is the one hover effect
+   that lives in a stylesheet (scale up on mouse-over, photo/name/button
+   together) — a nested element specifically so its own `transform`
+   composes with the parent's coverflow pose instead of overwriting it. */
+.arrivals-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+}
+.arrivals-card-inner {
+  transition: transform var(--dur-slow) var(--ease-cloth);
+}
+.arrivals-card-inner:hover {
+  transform: scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .arrivals-card-inner:hover { transform: none; }
+}
+
+/* New arrivals slider — the control that replaced the strip's old
+   auto-scroll. -webkit-appearance/-moz-appearance: none first, on both
+   the input and its thumb, is required before any of the thumb/track
+   pseudo-element rules below will actually apply in either engine. */
+.arrivals-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--oat-40);
+  cursor: pointer;
+}
+.arrivals-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--rose);
+  border: 3px solid var(--oat);
+  box-shadow: 0 1px 4px rgba(25, 23, 20, 0.25);
+}
+.arrivals-slider::-moz-range-thumb {
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--rose);
+  border: 3px solid var(--oat);
+  box-shadow: 0 1px 4px rgba(25, 23, 20, 0.25);
+}
+.arrivals-slider::-moz-range-track {
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--oat-40);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* Multi-column layouts are set inline (per the design kit's own component
+   pattern), so a plain CSS rule can't win on specificity — !important is
+   the standard, deliberate way to let a stylesheet override an inline
+   style. Matches the kit's own 780px breakpoint (see niana-site.html). */
+@media (max-width: 780px) {
+  .stack-on-mobile { grid-template-columns: 1fr !important; }
+}
+
+/* Narrower side gutter on small screens so content isn't squeezed by the
+   desktop-tuned 40px padding token. */
+@media (max-width: 640px) {
+  :root { --gutter: 20px; }
+}
+
+/* Collection's material filter, phone only: five labels at the desktop
+   48px gap wrap onto two lines before the sort row even starts, pushing
+   the actual products a full screen down. A single horizontally-scrolling
+   row (chip-strip style, no wrap) reads lighter and gets to the grid
+   faster — the scrollbar itself is hidden since the row's own truncated
+   last label already signals there's more to scroll to. */
+@media (max-width: 640px) {
+  .collection-tabs {
+    flex-wrap: nowrap !important;
+    gap: var(--space-5) !important;
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .collection-tabs::-webkit-scrollbar { display: none; }
+  .collection-tabs button { flex: 0 0 auto; }
+}
+
+/* About's studio photo sits at 80% width, left-aligned in its own grid
+   column — paired against the text column on desktop, that reads fine,
+   but stacked full-width on phones (stack-on-mobile) it just looks like
+   an off-center accident: floating top-left with dead space beside it. */
+@media (max-width: 780px) {
+  .about-studio-photo { margin: 0 auto; }
+}
+
+/* Home's "Explore by material" band, phone only: drop the forced 100vh —
+   three stacked cards need more room than one viewport, not less — and
+   let the section size to its actual content instead of clipping it.
+   Unlike the collage above, all three cards stay: each is a distinct
+   link (crochet/leather/denim), not decorative filler photos. */
+@media (max-width: 780px) {
+  .home-explore-section {
+    min-height: auto !important;
+    padding-top: var(--space-8) !important;
+    padding-bottom: var(--space-9) !important;
+  }
+}
+
+/* Header: the full inline nav + icon row (header-nav-desktop) versus the
+   hamburger toggle (header-menu-toggle) — exactly one of the two shows at
+   a time. !important for the same reason as .stack-on-mobile above: both
+   elements set their own `display` inline, so a plain rule can't win. */
+.header-menu-toggle { display: none !important; }
+@media (max-width: 780px) {
+  .header-nav-desktop { display: none !important; }
+  .header-menu-toggle { display: inline-flex !important; }
+}
+
+/* Skip-to-content link: off-screen until it receives keyboard focus, then
+   snaps into view above everything else so a keyboard user can see and
+   use it before tabbing through the header. */
+.skip-link {
+  position: fixed; top: -60px; left: 8px; z-index: 100;
+  background: var(--ink); color: var(--oat);
+  padding: 12px 20px; border-radius: var(--radius-md);
+  font: var(--type-body-sm); text-decoration: none;
+  transition: top var(--dur-fast) linear;
+}
+.skip-link:focus { top: 8px; }
+

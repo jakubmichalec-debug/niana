@@ -1,0 +1,18 @@
+:root {
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 28px;
+  --radius-xl: 44px;
+  --radius-pill: 999px;
+
+  --border-hairline: 1px solid var(--line-hairline);
+  --border-control: 1px solid var(--control-ghost-border);
+
+  --shadow-none: none;
+  --shadow-media: 0 24px 60px -30px rgba(75, 50, 48, 0.35);
+
+  --stitch: url("../../assets/running-stitch.png");
+  --stitch-height: 22px;
+
+  --blur-veil: saturate(105%) blur(14px);
+}

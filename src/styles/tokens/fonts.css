@@ -1,0 +1,73 @@
+/* Self-hosted (was a Google Fonts @import) — no third-party request means
+   no visitor IP is sent to fonts.gstatic.com on page load, and one less
+   external origin to wait on. Only the weights/subsets actually used by
+   the site are kept: Jost normal 200–700 (variable) in latin + latin-ext
+   (latin-ext covers the diacritics in Slovak product names — Ľadová,
+   Azúrová — the plain latin subset does not), WindSong 400 latin only
+   (the logo mark's capital N/A, no diacritics, no italic, no weight 500 —
+   none of those are used anywhere in the app), Lateef 200 (ExtraLight)
+   latin only, for the hero marquee (plain ASCII, no other subset
+   needed), and Lalezar 400 in BOTH latin and latin-ext — Lalezar is
+   also the site's heading font now, and headings render Slovak copy
+   ("Ručne robené tašky") once the language switch is set to SK, so
+   unlike Lateef it needs the diacritics latin-ext covers (č, š, ý...)
+   or the browser silently falls back to the family's next font (here,
+   the generic "cursive") for just those letters — which is exactly
+   what "some letters are broken" looked like. See
+   src/assets/fonts/SOURCE.md for where these came from and how to add
+   a subset back if new copy ever needs one.
+*/
+
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url('../../assets/fonts/jost-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url('../../assets/fonts/jost-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'WindSong';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../assets/fonts/windsong-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lateef';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('../../assets/fonts/lateef-extralight-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lalezar';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../assets/fonts/lalezar-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lalezar';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../assets/fonts/lalezar-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}

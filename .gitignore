@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+.claude/
+
+# Raw source photography / brand-kit reference material — not used by the
+# live site (which reads small, optimized copies from public/images/
+# instead) and too large/unedited to belong in a shared repo. Stays on
+# disk locally; just not tracked or pushed.
+niana/

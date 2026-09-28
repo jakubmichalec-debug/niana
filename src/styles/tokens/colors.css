@@ -1,0 +1,55 @@
+:root {
+  /* Brand palette — the only four colors in the system */
+  --ink: #191714;
+  --oat: #E3DECE;
+  --stone: #CBC2BF;
+  --umber: #4B3230;
+
+  /* Tints, derived only by alpha over the four base colors */
+  --ink-80: rgba(25, 23, 20, 0.80);
+  --ink-60: rgba(25, 23, 20, 0.60);
+  --ink-40: rgba(25, 23, 20, 0.40);
+  --ink-14: rgba(25, 23, 20, 0.14);
+  --ink-08: rgba(25, 23, 20, 0.08);
+  --oat-70: rgba(227, 222, 206, 0.70);
+  --oat-40: rgba(227, 222, 206, 0.40);
+  --oat-14: rgba(227, 222, 206, 0.14);
+
+  /* Semantic — surfaces */
+  --surface-page: var(--oat);
+  --surface-raised: #EDEAE0;
+  --surface-band: var(--stone);
+  --surface-inverse: var(--ink);
+  --surface-card: #EDEAE0;
+  --surface-card-inverse: var(--umber);
+
+  /* Semantic — text */
+  --text-primary: var(--ink);
+  --text-secondary: var(--ink-60);
+  --text-muted: var(--ink-40);
+  --text-on-inverse: var(--oat);
+  --text-on-inverse-muted: var(--oat-70);
+  --text-accent: var(--umber);
+
+  /* Semantic — lines */
+  --line-hairline: var(--ink-14);
+  --line-strong: var(--ink);
+  --line-inverse: var(--oat-40);
+
+  /* Semantic — controls */
+  --control-fill: var(--ink);
+  --control-fill-hover: var(--umber);
+  --control-text: var(--oat);
+  --control-ghost-border: var(--ink-40);
+
+  /* Fifth color — a deliberate exception to "the only four colors" above.
+     Used only where the studio's pink line is the subject: the nav pill,
+     the New Arrivals band, and the hero marquee. One shade everywhere —
+     --blush is kept as an alias only because a few rules still reference
+     it by that name; it is not a different color any more. */
+  --rose: rgba(207, 128, 155, 0.8);
+  --blush: var(--rose);
+  /* Footer only — a deliberately different, darker/mauve pink from
+     --rose above, not another alias for it. */
+  --mauve: #9D8189;
+}
