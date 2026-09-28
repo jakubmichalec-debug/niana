@@ -1,0 +1,5 @@
+# Netlify (and compatible hosts) SPA fallback: any path not matching a
+# real file falls through to index.html so React Router can render it —
+# including the in-app NotFound page for a genuinely unknown path.
+# Harmless if the eventual host isn't Netlify; it just won't be read.
+/*  /index.html  200

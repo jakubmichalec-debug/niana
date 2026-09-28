@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-maintained, matching PRODUCTS in src/data/products.js — add or
+     remove a <url> block here when a piece is added or retired, and
+     update the domain throughout if it changes from the placeholder
+     niana.bags (see src/data/site.js). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://niana.bags/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://niana.bags/collection</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://niana.bags/collection/bordova</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/rubinova</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/ruzova</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/biela</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/fialova</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/zasnezena</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/hneda</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/machova</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/tmavomodra</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/zelena</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/vlajkova</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/denim</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/collection/petrolejova</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://niana.bags/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://niana.bags/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://niana.bags/privacy</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://niana.bags/imprint</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://niana.bags/terms</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+</urlset>
