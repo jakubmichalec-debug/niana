@@ -1,0 +1,1 @@
+import{d as r}from"./index-Cz9R-lRz.js";function s(e){return{"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:e.map((t,o)=>({"@type":"ListItem",position:o+1,name:t.label,item:t.to?`${r}${t.to}`:void 0}))}}export{s as b};

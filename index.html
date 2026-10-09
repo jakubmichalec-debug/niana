@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Niana — Handmade bags, Slovakia &amp; Belgium</title>
+    <meta name="description" content="Handmade crochet, leather, and denim bags, worked by hand between Slovakia and Belgium. Every piece one of one, already made, and sold as seen." />
+    <link rel="canonical" href="https://niana.bags/" />
+
+    <link rel="icon" type="image/svg+xml" href="/niana/favicon.svg" />
+    <meta name="theme-color" content="#E3DECE" />
+
+    <!-- The hero photo is the homepage's Largest Contentful Paint, but it
+         lives inside the lazily-loaded Home chunk — without this the
+         browser can't discover it until the main bundle has downloaded,
+         React has booted, and Home has rendered, which measured as a
+         4.2s LCP. Preloading starts the download immediately, in
+         parallel with the JS rather than after it. Harmless on other
+         routes: it's a single request the browser can reuse (~166KB —
+         heavier than the previous white-bag photo's ~40KB, since this
+         one's fine crochet/pearl texture compresses less; worth
+         revisiting if LCP regresses). -->
+    <link rel="preload" as="image" href="/niana/images/hero-pink.webp" fetchpriority="high" />
+
+    <!-- Open Graph / Twitter defaults — each route overrides these via
+         useSeo (src/hooks/useSeo.js) once React mounts; these are just
+         what a crawler or link-preview bot sees before/without JS. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Niana" />
+    <meta property="og:title" content="Niana — Handmade bags, Slovakia &amp; Belgium" />
+    <meta property="og:description" content="Handmade crochet, leather, and denim bags, worked by hand between Slovakia and Belgium. Every piece one of one, already made, and sold as seen." />
+    <meta property="og:url" content="https://niana.bags/" />
+    <meta property="og:image" content="https://niana.bags/images/hero.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Niana — Handmade bags, Slovakia &amp; Belgium" />
+    <meta name="twitter:description" content="Handmade crochet, leather, and denim bags, worked by hand between Slovakia and Belgium." />
+    <meta name="twitter:image" content="https://niana.bags/images/hero.png" />
+
+    <!-- Sitewide identity — does not change per route, so it lives here
+         as a static tag rather than being injected by useSeo on every
+         page. Per-page schema (Product, BreadcrumbList) is added by each
+         page via useSeo. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Niana",
+        "description": "Handmade crochet, leather, and denim bags, worked by hand between Slovakia and Belgium. Every piece one of one, already made, and sold as seen.",
+        "url": "https://niana.bags/",
+        "image": "https://niana.bags/images/hero.png",
+        "founder": { "@type": "Person", "name": "Nina Hajdíková" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Považská Bystrica",
+          "addressCountry": "SK"
+        },
+        "sameAs": ["https://www.instagram.com/niana.bags/"]
+      }
+    </script>
+    <script type="module" crossorigin src="/niana/assets/index-Cz9R-lRz.js"></script>
+    <link rel="stylesheet" crossorigin href="/niana/assets/index-BmIJzqyu.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+# Niana
+
+> Handmade crochet, leather, and denim bags, made by hand between Slovakia
+> and Belgium. Every piece shown is one of one, already made, and sold as
+> seen, not made to order, and not configurable.
+
+Niana is a small studio run by Nina Hajdíková. This website is a
+catalogue, not a checkout: to ask about or buy a piece, contact Niana
+directly on Instagram (@niana.bags) or by email, see /imprint.
+
+## Pages
+
+- [Home](https://niana.bags/): studio introduction and new arrivals
+- [Collection](https://niana.bags/collection): every current piece, filterable by material (crochet, leather, denim, custom)
+- [About](https://niana.bags/about): the studio, materials, and process
+- [Privacy Policy](https://niana.bags/privacy)
+- [Imprint](https://niana.bags/imprint)
+- [Terms of Use](https://niana.bags/terms)
+
+## Notes for automated crawlers
+
+No user accounts, no on-site payments, no cookies, no analytics. Product
+pages (/collection/:slug) each describe a single specific, already-made
+item — not a general product type with variants.

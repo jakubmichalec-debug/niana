@@ -1,0 +1,27 @@
+# Netlify (and compatible hosts) security headers. Harmless if the
+# eventual host isn't Netlify — it just won't be read; see vercel.json
+# for the equivalent on Vercel.
+#
+# The CSP is as strict as this site's actual code allows: script-src has
+# no 'unsafe-inline'/'unsafe-eval' (there is exactly one <script> in the
+# built HTML, the self-hosted module bundle, plus a JSON-LD data block
+# CSP doesn't treat as executable). style-src needs 'unsafe-inline'
+# because every component here styles itself with inline style={{...}}
+# attributes rather than stylesheet classes — nonce'ing that isn't
+# practical for a client-rendered app, and inline CSS is a much smaller
+# risk than inline JS. No third-party origins appear anywhere (fonts are
+# self-hosted, there is no analytics, no embeds).
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+
+# Caching. /assets/* filenames carry a content hash (a changed file gets a
+# new name), so they can be cached for a year. /images/* names are not
+# hashed, so a week keeps repeat visits fast without pinning a replaced photo.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=604800

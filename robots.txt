@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://niana.bags/sitemap.xml
